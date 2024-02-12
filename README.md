@@ -18,18 +18,6 @@ Component library that compiles React Components to custom HTML elements.
 ```
 <script type="module" src="path/to/build-wc/index.js"></script>
 <link rel="stylesheet" href="path/to/build-wc/style.css">
-<style>
-      @font-face {
-        font-family: 'Quicksand';
-        src: url('path/to/build-wc/Quicksand.ttf') format('truetype');
-      }
-
-      @font-face {
-        font-family: 'Libre Franklin';
-        src: url('path/to/build-wc/LibreFranklin.ttf') format('truetype');
-      }
-</style>
-
 ```
 5. Use components! 
 ```
