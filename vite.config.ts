@@ -3,12 +3,20 @@ import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 import tsconfigPaths from 'vite-tsconfig-paths';
-import { peerDependencies, dependencies } from './package.json'
+import { peerDependencies, dependencies } from './package.json';
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const isWebc = process.argv.includes('webc');
-
+const addFonts = viteStaticCopy({
+  targets: [
+    {
+      src: 'fonts',
+      dest: ''
+    }
+  ]
+});
 export default defineConfig({
-  plugins: isWebc ? [react()] : [react(),dts({exclude: ['**/*.wc.tsx'], insertTypesEntry: true}),tsconfigPaths()],
+  plugins: isWebc ? [react(),addFonts] : [react(),dts({exclude: ['**/*.wc.tsx'], insertTypesEntry: true}),tsconfigPaths(),addFonts],
   build: {
     outDir: isWebc ? 'build-wc' : 'build',
     lib: {
@@ -18,7 +26,10 @@ export default defineConfig({
       fileName: () => 'index.js',
     },
     rollupOptions: isWebc ? {
-      output: { preserveModules: false, exports: 'named' }
+      output: { 
+        preserveModules: false, 
+        exports: 'named',
+      }
     }:{
       external: [...Object.keys(peerDependencies), ...Object.keys(dependencies).filter(key => key !== '@mui/base')],
       output: { preserveModules: false, exports: 'named' }

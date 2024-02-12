@@ -16,8 +16,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && postcss ./src/index.css -o ./build/style.css",
-    "build:wc": "tsc && vite build -- webc && postcss ./src/index.css -o ./build-wc/style.css",
+    "build": "tsc && vite build && postcss ./index.css -o ./build/style.css",
+    "build:wc": "tsc && vite build -- webc && postcss ./index.css -o ./build-wc/style.css",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -51,6 +51,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.0",
     "vite-plugin-dts": "^3.7.2",
+    "vite-plugin-static-copy": "^1.0.1",
     "vite-tsconfig-paths": "^4.3.1"
   }
 }
