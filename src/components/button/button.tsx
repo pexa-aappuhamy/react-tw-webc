@@ -1,6 +1,6 @@
 
 import { useButton } from '@mui/base/useButton';
-import React from 'react';
+import * as React from 'react';
 import { GDSButtonProps, buttonVariants } from './button.props';
 import { cn } from "@utils";
 

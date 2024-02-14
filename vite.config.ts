@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 import tsconfigPaths from 'vite-tsconfig-paths';
+//@ts-ignore
 import { peerDependencies, dependencies } from './package.json';
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
@@ -31,7 +32,7 @@ export default defineConfig({
         exports: 'named',
       }
     }:{
-      external: [...Object.keys(peerDependencies), ...Object.keys(dependencies).filter(key => key !== '@mui/base')],
+      external: [...Object.keys(peerDependencies), ...Object.keys(dependencies)],
       output: { preserveModules: false, exports: 'named' }
     },
     target: 'esnext',
