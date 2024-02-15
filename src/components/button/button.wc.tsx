@@ -21,3 +21,5 @@ export const WCButton = (props: GDSButtonProps) => {
       </button>
   );
 };
+
+export const WCButtonAttributes = ["variant","size","class-name"];

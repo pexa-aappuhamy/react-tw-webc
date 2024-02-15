@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>React Web Components</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script type="module" src="../build-wc/index.js"></script>
-    <link rel="stylesheet" href="../build-wc/style.css">
   </head>
   <body>
+    <link rel="stylesheet" href="../build-wc/style.css">
     <div id="host">
-      <gds-button size="lg">
+      <gds-button size="lg" variant="destructive" class-name="px-20">
         Click Here
       </gds-button>
     </div>

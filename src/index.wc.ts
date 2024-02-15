@@ -1,3 +1,3 @@
 import { define } from 'reactement';
-import { WCButton } from './components/button/button.wc';
-define('gds-button', () => WCButton, { attributes: ['className', 'size', 'variant']});
+import { WCButton, WCButtonAttributes } from './components/button/button.wc';
+define('gds-button', () => WCButton, { attributes: WCButtonAttributes});
